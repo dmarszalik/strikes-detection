@@ -25,7 +25,7 @@ def evaluate_classification_model(model, X_test, y_test):
     print("===========================")
     print(f"F1 score: {f1:.2f}")
 
-
+# Read data from csv
 train_data = np.genfromtxt('./data/train.csv', delimiter=';')
 val_data = np.genfromtxt('./data/val.csv', delimiter=';')
 test_data = np.genfromtxt('./data/test.csv', delimiter=';')
@@ -37,6 +37,7 @@ y_val = val_data[:, -1].astype(int)
 X_test = test_data[:, :-1]
 y_test = test_data[:, -1].astype(int)
 
+# Initialize ML model and Standard Scaler
 rfc = RandomForestClassifier(max_depth=20, min_samples_split=5, n_estimators=50)
 scaler = StandardScaler()
 
@@ -45,7 +46,6 @@ rfc_pipe = Pipeline([
     ('model', rfc),
 ])
 
+# Train ML model and validate on test data
 rfc_pipe.fit(X_train, y_train).score(X_val, y_val)
 evaluate_classification_model(rfc_pipe, X_test, y_test)
-
-

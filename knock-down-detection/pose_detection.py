@@ -45,10 +45,11 @@ I've recorded myself to train model whether fighter is knocked-down or not.
 class PoseDetector:
     def __init__(self, model_name, pretrained_weights="coco_pose"):
         self.model = models.get(model_name, pretrained_weights=pretrained_weights)
-        self.device = 'cuda' if torch.cuda.is_available() else 'cpu'
-        self.model.to(self.device)
+        self.device = 'cuda' if torch.cuda.is_available() else 'cpu' # checks if GPU is available
+        self.model.to(self.device) # if ('cuda'), the model will be transferred to the GPU, otherwise to the CPU.
 
     def detect_pose(self, image, confidence=0.51):
+        """ Function that returns XY coordinates of bboxes and bodypoints XY coordinates """
         preds = self.model.predict(image, conf=confidence)
         prediction = preds[0].prediction
         return prediction.bboxes_xyxy, prediction.poses
@@ -59,6 +60,8 @@ class FighterDetector:
         self.yolo_model = YOLO(yolo_model_path)
 
     def is_fighter(self, image_box):
+        """ Function is taking image box, checks if shows fighter and returns boolean value """
+
         if image_box.shape[0] == 0 or image_box.shape[1] == 0:
             return False
         else:
