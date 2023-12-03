@@ -1,0 +1,6 @@
+train: /Users/dawidmarszalik/Bootcamp Data Science/strikes-detection/YOLOv8-custom/train
+val: /Users/dawidmarszalik/Bootcamp Data Science/strikes-detection/YOLOv8-custom/val
+
+nc: 4
+
+names: ["FIGHTER", "Gloves", "REFEREE", "SHORTS"]

@@ -126,6 +126,8 @@ ui-tests/playwright-report
 
 # VSCode
 .vscode
+.idea
+.idea/
 
 # RTC
 .jupyter_ystore.db
@@ -135,3 +137,7 @@ ui-tests/playwright-report
 .pnp.*
 ui-tests/.yarn/*
 ui-tests/.pnp.*
+
+#project based
+video/
+YOLOv8-custom/runs/
