@@ -34,7 +34,7 @@ File `train.sh` The train.sh file is a script used to train YOLOv8 on labeled da
 
     ```bash
     chmod +x train.sh # Grant permissions to execute the script.
-    ./train.sh # Run the script
+    ./YOLOv8-custom/train.sh # Run the script
     ```
 
 ### Windows (Bash on Windows)
@@ -44,7 +44,7 @@ File `train.sh` The train.sh file is a script used to train YOLOv8 on labeled da
 2. execute the following commands:
 
     ```bash
-    bash train.sh # Run the script using Bash on Windows (may require installing tools such as Git Bash).
+    bash .\YOLOv8-custom\train.sh # Run the script using Bash on Windows (may require installing tools such as Git Bash).
     ```
    
 ### Windows (PowerShell)
@@ -54,7 +54,7 @@ File `train.sh` The train.sh file is a script used to train YOLOv8 on labeled da
 2. execute the following commands:
 
     ```powershell.
-    .train.sh # Run the script in PowerShell.
+    .\YOLOv8-custom\train.sh # Run the script in PowerShell.
     ```
    
 ---------------------------

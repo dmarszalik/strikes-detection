@@ -141,3 +141,7 @@ ui-tests/.pnp.*
 #project based
 video/
 YOLOv8-custom/runs/
+
+#models
+.pt
+*.pt
